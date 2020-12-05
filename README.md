@@ -15,9 +15,47 @@ created - tickers, tickerVolumes, tickerStartingPrices, and tickerEndingPrices. 
 worksheets. A tickerIndex variable was also created to access the correct index across the four different arrays. Another for loop was then created to loop over all the rows 
 in the spreadsheet. Using the tickerIndex variable as the index allowed me to assign each of the different arrays to each ticker symbol listed in the worksheets 
 before iterating through the dataset. 
+   
+   ```
+    Dim tickerVolumes(12) As Long
+    Dim tickerStartingPrices(12) As Single
+    Dim tickerEndingPrices(12) As Single
+    
+    
+    ''2a) Create a for loop to initialize the tickerVolumes to zero.
+    
+    For i = 0 To 11
+        tickerVolumes(i) = 0
+        
+    Next i
+        
+    ''2b) Loop over all the rows in the spreadsheet.
+    
+    For j = 2 To RowCount
+    
+        '3a) Increase volume for current ticker
+        
+        tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(j, 8).Value
+        
+        '3b) Check if the current row is the first row with the selected tickerIndex.
+        'If  Then
+            
+            If Cells(j - 1, 1).Value <> tickers(tickerIndex) Then
+                tickerStartingPrices(tickerIndex) = Cells(j, 6).Value
+                
+            End If
+        
+        '3c) check if the current row is the last row with the selected ticker
+         'If the next row’s ticker doesn’t match, increase the tickerIndex.
+        'If  Then
+            
+            If Cells(j + 1, 1).Value <> tickers(tickerIndex) Then
+                tickerEndingPrices(tickerIndex) = Cells(j, 6).Value
 
-Using images and examples of your code, compare the stock performance between 2017 and 2018, 
-as well as the execution times of the original script and the refactored script.
+            '3d Increase the tickerIndex.
+            
+            tickerIndex = tickerIndex + 1
+```
 
 ### Run Time for Each Year 
 #### Original 
@@ -32,6 +70,7 @@ Based on the output run times, the refactored code ran approximately 0.5 seconds
 
 ![all_stocks__2017](https://github.com/echuung94/stock-analysis/blob/main/Resources/all%20stocks%202017%20.png)
 ![all_stocks__2018](https://github.com/echuung94/stock-analysis/blob/main/Resources/all%20stocks%202018.png)
+
 
 ## Summary: In a summary statement, address the following questions.
 
