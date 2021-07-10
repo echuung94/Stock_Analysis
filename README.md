@@ -1,6 +1,6 @@
-# stock-analysis
+# Stock Analysis
 
-## Overview of Project - explain purpose of the analysis 
+## Overview 
 
 Steve is wanting to do additional research for his parents and wants to expand the dataset to include the stock 
 market over the last few years. The purpose of the analysis was to refactor the original code to loop through all the 
@@ -72,8 +72,7 @@ Based on the output run times, the refactored code ran approximately 0.5 seconds
 ![all_stocks__2018](https://github.com/echuung94/stock-analysis/blob/main/Resources/all%20stocks%202018.png)
 
 
-## Summary: In a summary statement, address the following questions.
-
+## Summary
 1. What are the advantages or disadvantages of refactoring code?
 An advantage of refactoring code is that you will have a cleaner and easier to maintain code base. Refactoring also increases the performance. 
 A disadvantage could be the amount of time spent refactoring the code. Another disadvantage may be if the original code is not written correctly, 
